@@ -1,55 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Otaku</title>
-    <link rel="stylesheet" href="/public/css/styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  </head>
-  <body>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+</head>
+
+<body>
     <header>
-      <div id="headerdiv">
-        <h1>Movie <span>Otaku</span></h1>
-        <p>A haven for anime movie enthusiasts.</p>
-      </div>
-      <div id="headerNav">
-        <a id="moviesNav" href="/">List Movies</a>
-        <a id="reviewsNav" href="/reviews">All Reviews</a>
-      </div>
+        <div id="headerdiv">
+            <h1>Movie <span>Otaku</span></h1>
+            <p>A haven for anime movie enthusiasts.</p>
+        </div>
+        <div id="headerNav">
+            <a id="moviesNav" href="/">List Movies</a>
+            <a id="reviewsNav" href="/reviews">All Reviews</a>
+        </div>
     </header>
 
     <section id="movies">
-      <% movies.forEach(movie => { %>
-      <div class="movie">
-        <img src="<%= movie.image %>" alt="<%= movie.title %>" />
-        <div class="infoDiv">
-          <h3 class="title"><%= movie.title %> (<%= movie.year %>)</h3>
-          <div class="rating">
-            <% for(let i=0; i < 5; i++) { %>
-              <% if(i < Math.floor(movie.rating)) { %>
-                <i class="fas fa-star"></i>
-              <% } else if (i===Math.floor(movie.rating) && movie.rating % 1 !==0) { %>
-                <i class="fas fa-star-half-alt"></i>
-              <% } else { %>
-                <i class="far fa-star"></i>
-              <% } %>
-            <% } %>
-          </div>
-          <p class="description"><%= movie.description %></p>
-          <a class="view" href="/reviews">View Reviews</a>
-        </div>
-      </div>
-      <% }) %>
+        <% movies.forEach(movie=> { %>
+            <div class="movie">
+                <img src="<%= movie.image %>" alt="<%= movie.title %>" />
+                <div class="infoDiv">
+                    <h3 class="title">
+                        <%= movie.title %> (<%= movie.year %>)
+                    </h3>
+                    <div class="rating">
+                        <% for(let i=0; i < 5; i++) { %>
+                            <% if(i < Math.floor(movie.rating)) { %>
+                                <i class="fas fa-star"></i>
+                                <% } else if (i===Math.floor(movie.rating) && movie.rating % 1 !==0) { %>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <% } else { %>
+                                        <i class="far fa-star"></i>
+                                        <% } %>
+                                            <% } %>
+                    </div>
+                    <p class="description">
+                        <%= movie.description %>
+                    </p>
+                    <a class="view" href="/reviews">View Reviews</a>
+                </div>
+            </div>
+            <% }) %>
     </section>
 
     <footer>
-      <p>&copy; TinAungOo</p>
-      <div class="social-links">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
+        <p>&copy; 2023 Movie Otaku</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
     </footer>
-  </body>
+</body>
+
 </html>
