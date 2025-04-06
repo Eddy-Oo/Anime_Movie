@@ -1,18 +1,13 @@
-#moviesNav,
-#reviewsNav {
-  color: white;
-}
-
-#moviesNav:hover,
-#reviewsNav:hover {
-  background-color: pink;
+:root {
+  --background-color: #ff69b4;
+  --background-transparent-color: rgba(255, 182, 193, 0.2);
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  flex-direction: column; /* Center horizontally */
+  flex-direction: column;
 }
 
 form {
@@ -27,11 +22,16 @@ textarea {
   align-self: center;
   margin: 10px;
   background-color: var(--background-transparent-color);
-  color: white;
+  color: #333;
+  padding: 10px;
+  border: 1px solid hotpink;
+  border-radius: 8px;
 }
+
 input {
   height: 3vh;
 }
+
 textarea {
   height: 10vh;
 }
@@ -42,23 +42,48 @@ a {
 }
 
 button {
-  width: 20%;
-  align-self: center;
-  height: 3vh;
   background-color: var(--background-color);
   color: white;
+  width: 20%;
+  align-self: center;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: hotpink;
+  transform: scale(1.05);
 }
 
 a {
   color: white;
+  text-decoration: none;
+}
+
+#moviesNav,
+#reviewsNav {
+  background-color: pink;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+#moviesNav:hover,
+#reviewsNav:hover {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 768px) {
-  button {
-    height: auto;
-  }
   input,
   textarea {
     width: 80%;
+  }
+
+  button {
+    width: 60%;
   }
 }
