@@ -11,6 +11,7 @@ body {
   margin: 0;
   padding: 0;
   color: #333;
+  text-align: center;
 }
 
 header {
@@ -24,16 +25,24 @@ header {
   font-size: 3em;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
 .movie {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: var(--background-transparent-color);
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(255, 105, 180, 0.2);
   padding: 2vh;
-  margin: 4vh auto;
-  max-width: 80%;
+  margin: 4vh;
+  max-width: 300px;
   transition: transform 0.3s ease;
 }
 
@@ -45,7 +54,7 @@ header {
   max-width: 150px;
   height: auto;
   border-radius: 10px;
-  margin-right: 20px;
+  margin-bottom: 10px;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -56,8 +65,8 @@ header {
 .infoDiv {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 2vh;
+  align-items: center;
+  padding: 1vh;
   width: 100%;
 }
 
@@ -95,13 +104,13 @@ header {
 
 #moviesNav,
 #reviewsNav {
-  border: none;
-  padding: 10px 15px;
+  padding: 10px 20px;
   color: white;
   background-color: pink;
-  margin: 0 5px;
+  margin: 20px auto;
   border-radius: 10px;
   transition: background-color 0.3s ease;
+  width: auto;
 }
 
 #reviewsNav:hover,
@@ -110,15 +119,20 @@ header {
 }
 
 @media (max-width: 1000px) {
-  .movie {
+  .container {
     flex-direction: column;
-    padding: 10px;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .movie {
+    max-width: 100%;
+    flex-direction: column;
+    padding: 2vh;
   }
 
   .movie img {
-    margin: 0 0 20px 0;
-    width: 60%;
+    width: 80%;
   }
 
   .title {
