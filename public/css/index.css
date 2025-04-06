@@ -1,3 +1,5 @@
+/* index.css */
+
 :root {
   --background-color: #ff69b4;
   --background-transparent-color: rgba(255, 182, 193, 0.2);
@@ -87,21 +89,6 @@ header {
 }
 
 .movie a:hover {
-  background-color: hotpink;
-  transform: scale(1.05);
-}
-
-button {
-  background-color: var(--background-color);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: none;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-button:hover {
   background-color: hotpink;
   transform: scale(1.05);
 }
