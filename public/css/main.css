@@ -1,90 +1,99 @@
-:root {
-  --background-color: rgba(255, 192, 203, 0.8);
-  --pure-white: rgb(255, 255, 255);
-  --pure-black: rgb(0, 0, 0);
-  --background-transparent-color: rgba(255, 192, 203, 0.8);
-  --background-gray: rgba(105, 105, 105, 0.753);
-  --triggered-btn: rgb(7, 209, 245);
-}
-
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-  color: white;
-}
-
-body {
-  background-color: var(--pure-black);
-  padding: 0px;
-  margin: 0px;
-}
-
-header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  text-align: center;
-  background-color: var(--background-transparent-color);
-  animation: headershadow 5s infinite;
-  margin: 0px;
-  padding-bottom: 5px;
-  z-index: 4;
-}
-
-#headerdiv {
-  display: flex;
-  flex-direction: row;
-  gap: 5vh;
-}
-h1 {
-  padding: 0px;
-  margin-bottom: 0px;
-  margin-top: 5px;
-}
-
-#headerNav {
-  display: flex;
-  align-self: center;
-}
-
-#moviesNav,
-#reviewsNav {
-  text-decoration: none;
-  color: #000000;
-  padding: 10px;
-}
-
-@keyframes headershadow {
-  0% {
-    border-bottom: solid 2px var(--background-color);
+.movie {
+    padding: 2vh;
+    animation: bordershadow 5s infinite;
+    display: flex;
+    max-width: 80%;
+    min-width: 40%;
+    justify-self: center;
+    text-align: center;
+    justify-content: center;
+    margin: 6vh;
   }
-  50% {
-    border-bottom: solid 2px var(--pure-white);
+  
+  .movie img {
+    max-width: 20%;
+    min-width: 10%;
+    height: auto;
+    border-radius: 5px;
+    transition: ease-in-out 0.3s;
   }
-  100% {
-    border-bottom: solid 2px var(--background-color);
+  .movie img:hover {
+    transform: scale(1.2);
   }
-}
-
-@keyframes bordershadow {
-  0% {
-    border: solid 2px var(--background-color);
-  }
-  50% {
-    border: solid 2px var(--pure-white);
-  }
-  100% {
-    border: solid 2px var(--background-color);
-  }
-}
-
-@media (max-width: 768px) {
-  #headerdiv {
+  .infoDiv {
+    width: 50%;
+    background-color: var(--background-transparent-color);
+    display: flex;
     flex-direction: column;
-    gap: 0px;
-    font-size: 2vh;
+    justify-content: center; /* Centers text horizontally */
+    align-items: center;
+    padding: 2vh;
   }
-}
+  .movie a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  button:hover {
+  background-color: pink;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+  }
+  
+  .site-title {
+  color: pink;
+  }
+  header {
+  background-color: rgba(255, 192, 203, 0.8); /* light pink */
+  }
+  
+  
+  .title {
+    font-size: 5vh;
+  }
+  .description {
+    display: flex;
+    justify-content: center; /* Centers text horizontally */
+    align-items: center;
+    font-size: 3vh;
+  }
+  .year {
+    padding-left: 90%;
+  }
+  .movie a {
+    background-color: var(--background-color);
+    padding: 3%;
+  }
+  
+  #moviesNav {
+    border: black solid 1px;
+    background-color: pink;
+    color: white;
+  }
+  #reviewsNav {
+    transition: 0.3s ease-in-out;
+    color: white;
+  }
+  #reviewsNav:hover {
+    background-color: rgba(0, 0, 0, 0.466);
+    transition: ease-in-out 0.3s;
+  }
+  @media (max-width: 1000px) {
+    .movie {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+    .movie img {
+      width: 40vh;
+    }
+    .title {
+      font-size: 4vh;
+      padding: 0px;
+      margin: 0px;
+    }
+    .description {
+      font-size: 2vh;
+    }
+  }
