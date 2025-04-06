@@ -14,7 +14,7 @@ const movies = [
     id: 1, 
     title: "Spirited Away", 
     year: 2001,
-    photo: "/assets/spirited-away.jpg",
+    photo: "/public/assets/spirited-away.jpg",
     rating: 5,
     description: "Chihiro enters a magical bathhouse to rescue her parents from a witch's curse in this Studio Ghibli masterpiece."
   },
@@ -22,7 +22,7 @@ const movies = [
     id: 2, 
     title: "Your Name", 
     year: 2016,
-    photo: "/assets/your-name.jpg",
+    photo: "/public/assets/your-name.jpg",
     rating: 4.5,
     description: "Two teenagers mysteriously swap bodies and form a connection across time in this visually stunning romance."
   },
@@ -30,7 +30,7 @@ const movies = [
     id: 3, 
     title: "Akira", 
     year: 1988,
-    photo: "/assets/akira.jpg",
+    photo: "/public/assets/akira.jpg",
     rating: 4,
     description: "A biker gang leader navigates a cyberpunk Neo-Tokyo to save his friend from government experiments."
   }
