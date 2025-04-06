@@ -12,7 +12,13 @@
     transition: ease-in-out 0.5s;
     color: white;
   }
-  
+
+  a.view-reviews-btn:hover {
+  background-color: hotpink;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
   h1 {
     text-align: center;
   }
