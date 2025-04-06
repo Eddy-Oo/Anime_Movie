@@ -5,16 +5,52 @@
   --background-transparent-color: rgba(255, 182, 193, 0.2);
 }
 
-section {
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff0f5;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  background-color: rgba(255, 192, 203, 0.8);
+  padding: 2vh;
+  text-align: center;
+}
+
+#headerdiv h1, #headerdiv p {
+  margin: 0;
+}
+
+#headerNav {
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
+}
+
+#headerNav a {
+  margin: 0 15px;
+  padding: 10px;
+  background-color: pink;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+#headerNav a:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+section {
+  display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  text-align: center; /* Center text */
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
 }
-p {
-  text-align: center; 
-}
+
 form {
   display: flex;
   flex-direction: column;
@@ -43,8 +79,7 @@ textarea {
   height: 10vh;
 }
 
-h1,
-a {
+h1 {
   text-align: center;
 }
 
@@ -68,20 +103,7 @@ button:hover {
 a {
   color: white;
   text-decoration: none;
-}
-
-#moviesNav,
-#reviewsNav {
-  background-color: pink;
-  color: white;
-  padding: 10px;
-  border-radius: 10px;
-  margin: 10px;
-}
-
-#moviesNav:hover,
-#reviewsNav:hover {
-  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
 }
 
 @media (max-width: 768px) {
