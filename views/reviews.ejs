@@ -1,68 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Reviews | Movie Otaku</title>
-    <link rel="stylesheet" href="/public/css/styles.css" />
+    <title>Anime Movie Reviews</title>
+    <script src="/public/js/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-
-<body>
+  </head>
+  <body>
+    <!-- header -->
     <header>
-        <h1>Movie <span>Otaku</span></h1>
-        <p>All User Reviews</p>
+      <h1>Movie <span>Otaku</span></h1>
+      <p>Discover, review, and explore the Best of Anime Movies</p>
     </header>
-
+    
+    <!-- navigation -->
     <nav id="main-nav">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/reviews">All Reviews</a></li>
-        </ul>
+      <ul>
+        <li><a href="/reviews">Featured Reviews</a></li>
+        <li><a href="/#submit-review">Submit a Review</a></li>
+        <li><a href="/#anime-news">Anime News</a></li>
+        <li><a href="/#top-rated">Top Rated</a></li>
+      </ul>
     </nav>
 
+    <!-- all reviews -->
     <section id="all-reviews">
-        <h2>User Reviews</h2>
-
-        <% if (reviews.length===0) { %>
-            <p>No reviews yet. Be the first to review!</p>
-            <% } else { %>
-                <% reviews.forEach(review=> { %>
-                    <article class="review-card">
-                        <div class="review-header">
-                            <h3>
-                                <%= review.movieTitle %>
-                            </h3>
-                            <div class="rating">
-                                <% for(let i=0; i < review.rating; i++) { %>
-                                    <i class="fas fa-star"></i>
-                                    <% } %>
-                                        <% for(let i=0; i < 5 - review.rating; i++) { %>
-                                            <i class="far fa-star"></i>
-                                            <% } %>
-                            </div>
-                            <p class="review-date">
-                                <%= new Date(review.date).toLocaleDateString() %>
-                            </p>
-                        </div>
-                        <div class="review-content">
-                            <p>
-                                <%= review.reviewText %>
-                            </p>
-                        </div>
-                    </article>
-                    <% }); %>
-                        <% } %>
+      <h2>All Reviews</h2>
+      <div class="reviews-grid">
+        <% reviews.forEach(review => { %>
+          <article class="review-card">
+            <img src="<%= review.image %>" alt="<%= review.title %> movie poster" />
+            <div class="info">
+              <h3><%= review.title %> (<%= review.year %>)</h3>
+              <div class="rating">
+                <% for(let i = 0; i < 5; i++) { %>
+                  <% if(i < Math.floor(review.rating)) { %>
+                    <i class="fas fa-star"></i>
+                  <% } else if (i === Math.floor(review.rating) && review.rating % 1 !== 0) { %>
+                    <i class="fas fa-star-half-alt"></i>
+                  <% } else { %>
+                    <i class="far fa-star"></i>
+                  <% } %>
+                <% } %>
+              </div>
+              <p><%= review.excerpt %></p>
+              <div class="buttons">
+                <a href="/reviews/<%= review.id %>">Read Full Review</a>
+                <a href="<%= review.trailer %>" target="_blank" rel="noopener noreferrer">Watch Trailer</a>
+              </div>
+            </div>
+          </article>
+        <% }); %>
+      </div>
     </section>
 
+    <!-- footer -->
     <footer>
-        <p>&copy; TinAungOo</p>
-        <ul>
-            <!-- Footer links same as index -->
-        </ul>
+      <p>&copy; TinAungOo</p>
+      <ul>
+          <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://myanimelist.net" target="_blank" rel="noopener noreferrer"><i class="fas fa-dragon"></i></a></li>
+      </ul>
     </footer>
-    <script src="/public/js/script.js"></script>
-</body>
-
+    <link rel="stylesheet" href="/public/css/styles.css" />
+  </body>
 </html>
