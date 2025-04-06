@@ -1,3 +1,5 @@
+/* reviews.css */
+
 :root {
   --background-color: #ff69b4;
   --background-transparent-color: rgba(255, 182, 193, 0.2);
@@ -20,6 +22,8 @@ h2 {
   border-radius: 10px;
   background-color: var(--background-transparent-color);
   max-width: 80%;
+  width: 100%;
+  text-align: left;
 }
 
 .review {
@@ -65,6 +69,7 @@ a:hover {
   border-radius: 10px;
   transition: 0.3s ease-in-out;
   margin: 5px;
+  width: auto;
 }
 
 #moviesNav:hover,
