@@ -10,7 +10,7 @@ section {
   justify-content: center;
   flex-direction: column;
   min-height: 100vh;
-  text-align: center;
+  text-align: center; /* Center text */
 }
 
 form {
@@ -18,12 +18,13 @@ form {
   flex-direction: column;
   padding: 2vh;
   align-items: center;
+  width: 60%;
+  margin-top: 5vh;
 }
 
 input,
 textarea {
-  width: 50%;
-  align-self: center;
+  width: 80%;
   margin: 10px;
   background-color: var(--background-transparent-color);
   color: #333;
@@ -82,9 +83,13 @@ a {
 }
 
 @media (max-width: 768px) {
+  form {
+    width: 90%;
+  }
+
   input,
   textarea {
-    width: 80%;
+    width: 100%;
   }
 
   button {
