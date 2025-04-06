@@ -5,19 +5,47 @@
   --background-transparent-color: rgba(255, 182, 193, 0.2);
 }
 
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff0f5;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  background-color: rgba(255, 192, 203, 0.8);
+  padding: 2vh;
+  text-align: center;
+}
+
+#headerdiv h1, #headerdiv p {
+  margin: 0;
+}
+
+#headerNav {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+#headerNav a {
+  margin: 0 15px;
+  padding: 10px;
+  background-color: pink;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+#headerNav a:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 h1 {
   text-align: center;
-  color: hotpink;
 }
 
-h2 {
-  animation: headershadow 5s infinite;
-  color: #444;
-}
-
-p {
-  text-align: center; 
-}
 .reviewDiv {
   border: 1px solid var(--background-color);
   margin: 5vh auto;
@@ -26,7 +54,7 @@ p {
   background-color: var(--background-transparent-color);
   max-width: 80%;
   width: 100%;
-  text-align: center; /* Center the review section */
+  text-align: center;
 }
 
 .review {
