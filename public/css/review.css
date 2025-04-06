@@ -12,7 +12,9 @@ section {
   min-height: 100vh;
   text-align: center; /* Center text */
 }
-
+p {
+  text-align: center; 
+}
 form {
   display: flex;
   flex-direction: column;
