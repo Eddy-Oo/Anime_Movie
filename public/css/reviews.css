@@ -81,7 +81,7 @@ h1 {
 
 a {
   background-color: var(--background-color);
-  color: black;
+  color: white;
   padding: 10px 15px;
   border-radius: 10px;
   text-decoration: none;
