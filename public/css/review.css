@@ -85,7 +85,7 @@ h1 {
 
 button {
   background-color: var(--background-color);
-  color: white;
+  color: black;
   width: 20%;
   align-self: center;
   padding: 10px;
