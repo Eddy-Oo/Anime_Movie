@@ -21,19 +21,10 @@
         </div>
     </header>
 
-   <div class="movie">
-  <img src="<%= movie.photo %>" alt="<%= movie.title %> poster">
-  <div class="infoDiv">
-    <h2 class="title"><%= movie.title %> (<%= movie.year %>)</h2>
-    <p class="description"><%= movie.description %></p>
-    <a href="/review/<%= movie.id %>">View Reviews</a>
-  </div>
-</div>
-
     <section id="movies">
         <% movies.forEach(movie=> { %>
             <div class="movie">
-                <img src="<%= movie.image %>" alt="<%= movie.title %>" />
+                <img src="<%= movie.photo %>" alt="<%= movie.title %>" />
                 <div class="infoDiv">
                     <h3 class="title">
                         <%= movie.title %> (<%= movie.year %>)
@@ -52,7 +43,7 @@
                     <p class="description">
                         <%= movie.description %>
                     </p>
-                    <a class="view" href="/reviews">View Reviews</a>
+                    <a class="view" href="/review/<%= movie.id %>">View Reviews</a>
                 </div>
             </div>
             <% }) %>
@@ -67,5 +58,4 @@
         </div>
     </footer>
 </body>
-
 </html>
