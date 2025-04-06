@@ -15,6 +15,9 @@ h2 {
   color: #444;
 }
 
+p {
+  text-align: center; 
+}
 .reviewDiv {
   border: 1px solid var(--background-color);
   margin: 5vh auto;
