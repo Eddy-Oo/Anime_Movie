@@ -8,13 +8,13 @@
     transition: ease-in-out 0.5s;
   }
   #reviewsNav {
-    background-color: rgba(255, 192, 203, 0.8);
+    background-color: rgb(0, 0, 0);
     transition: ease-in-out 0.5s;
     color: white;
   }
 
   a.view-reviews-btn:hover {
-  background-color: hotpink;
+  background-color: pink;
   transform: scale(1.05);
   transition: all 0.3s ease-in-out;
 }
@@ -61,7 +61,7 @@
     margin-bottom: 0px;
   }
   .review .text {
-    border-left: 2px solid rgba(243, 243, 243, 0.336);
+    border-left: 2px solid rgb(0, 0, 0);
     padding-left: 1%;
     margin-top: 0px;
   }
