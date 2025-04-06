@@ -1,67 +1,73 @@
-#moviesNav {
-    color: white;
-    background-color: var(--backrground-transparent-color);
-  }
-  
-  #moviesNav:hover {
-    background-color: rgba(0, 0, 0, 0.466);
-    transition: ease-in-out 0.5s;
-  }
-  #reviewsNav {
-    background-color: rgb(0, 0, 0);
-    transition: ease-in-out 0.5s;
-    color: white;
-  }
+:root {
+  --background-color: #ff69b4;
+  --background-transparent-color: rgba(255, 182, 193, 0.2);
+}
 
-  a.view-reviews-btn:hover {
-  background-color: pink;
-  transform: scale(1.05);
+h1 {
+  text-align: center;
+  color: hotpink;
+}
+
+h2 {
+  animation: headershadow 5s infinite;
+  color: #444;
+}
+
+.reviewDiv {
+  border: 1px solid var(--background-color);
+  margin: 5vh auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--background-transparent-color);
+  max-width: 80%;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+}
+
+.review .name::before {
+  content: "- ";
+}
+
+.review .text {
+  border-left: 4px solid hotpink;
+  padding-left: 10px;
+  color: #444;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  background-color: var(--background-color);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
 
-  h1 {
-    text-align: center;
-  }
-  
-  h2 {
-    animation: headershadow 5s infinite;
-  }
-  
-  .reviewDiv {
-    border: solid 1px var(--background-color);
-    margin: 10%;
-    padding: 15px;
-  }
-  
-  a {
-    width: auto;
-    height: auto;
-    background-color: var(--background-color);
-    color: white;
-    padding: 0;
-    padding: 1%;
-    text-decoration: none;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .review {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .review .name::before {
-    content: "- ";
-  }
-  
-  .review .name {
-    margin-bottom: 0px;
-  }
-  .review .text {
-    border-left: 2px solid rgb(0, 0, 0);
-    padding-left: 1%;
-    margin-top: 0px;
-  }
+a:hover {
+  background-color: hotpink;
+  transform: scale(1.05);
+}
+
+#moviesNav,
+#reviewsNav {
+  padding: 10px;
+  color: white;
+  background-color: pink;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+  margin: 5px;
+}
+
+#moviesNav:hover,
+#reviewsNav:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
