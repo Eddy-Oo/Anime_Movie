@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anime Movies Review</title>
-    <link rel="stylesheet" href="/public/css/styles.css" />
+    <script src="/public/js/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -15,51 +15,135 @@
         <h1>Movie <span>Otaku</span></h1>
         <p>Discover, review, and explore the Best of Anime Movies</p>
     </header>
-
     <!-- navigation -->
     <nav id="main-nav">
         <ul>
-            <li><a href="#featured">Featured Reviews</a></li>
-            <li><a href="/reviews">All Reviews</a></li>
+            <li><a href="/reviews">Featured Reviews</a></li>
+            <li><a href="#submit-review">Submit a Review</a></li>
             <li><a href="#anime-news">Anime News</a></li>
             <li><a href="#top-rated">Top Rated</a></li>
         </ul>
     </nav>
 
-    <!-- featured-reviews -->
+    <!-- featured-reviews preview -->
     <section id="featured">
         <h2>Featured Reviews</h2>
-        <% movies.forEach(movie=> { %>
-            <article class="featured-article" style="background-image: url('/Assets/<%= movie.bgImage %>')">
-                <img src="/Assets/<%= movie.image %>" alt="<%= movie.title %> movie poster" />
-                <div class="info">
+        <div class="featured-preview">
+            <% featuredReviews.forEach(review=> { %>
+                <article class="featured-article-preview">
+                    <img src="<%= review.image %>" alt="<%= review.title %> movie poster" />
+                    <div class="info">
+                        <h3>
+                            <%= review.title %> (<%= review.year %>)
+                        </h3>
+                        <div class="rating">
+                            <% for(let i=0; i < 5; i++) { %>
+                                <% if(i < Math.floor(review.rating)) { %>
+                                    <i class="fas fa-star"></i>
+                                    <% } else if (i===Math.floor(review.rating) && review.rating % 1 !==0) { %>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <% } else { %>
+                                            <i class="far fa-star"></i>
+                                            <% } %>
+                                                <% } %>
+                        </div>
+                        <p>
+                            <%= review.excerpt %>
+                        </p>
+                        <div class="buttons">
+                            <a href="/reviews/<%= review.id %>">Read Full Review</a>
+                            <a href="<%= review.trailer %>" target="_blank" rel="noopener noreferrer">Watch Trailer</a>
+                        </div>
+                    </div>
+                </article>
+                <% }); %>
+        </div>
+        <a href="/reviews" class="view-all">View All Reviews</a>
+    </section>
+
+    <!-- top rated section -->
+    <section id="top-rated">
+        <h2>Top Rated Anime Movies</h2>
+        <div class="top-rated-grid">
+            <% topRated.forEach(movie=> { %>
+                <div class="movie-card">
+                    <img src="<%= movie.image %>" alt="<%= movie.title %>">
                     <h3>
-                        <%= movie.title %> (<%= movie.year %>)
+                        <%= movie.title %>
                     </h3>
                     <div class="rating">
-                        <% for(let i=0; i < Math.floor(movie.rating); i++) { %>
-                            <i class="fas fa-star"></i>
-                            <% } %>
-                                <% if (movie.rating % 1>= 0.5) { %>
+                        <% for(let i=0; i < 5; i++) { %>
+                            <% if(i < Math.floor(movie.rating)) { %>
+                                <i class="fas fa-star"></i>
+                                <% } else if (i===Math.floor(movie.rating) && movie.rating % 1 !==0) { %>
                                     <i class="fas fa-star-half-alt"></i>
-                                    <% } %>
-                                        <% for(let i=0; i < 5 - Math.ceil(movie.rating); i++) { %>
-                                            <i class="far fa-star"></i>
+                                    <% } else { %>
+                                        <i class="far fa-star"></i>
+                                        <% } %>
                                             <% } %>
                     </div>
                     <p>
                         <%= movie.description %>
                     </p>
-                    <div class="buttons">
-                        <a href="/review/<%= movie.id %>">Write a Review</a>
-                        <a href="/reviews">See All Reviews</a>
-                    </div>
                 </div>
-            </article>
-            <% }); %>
+                <% }); %>
+        </div>
     </section>
 
-    <!-- Include other sections from your HTML as needed -->
+    <!-- form -->
+    <section id="submit-review">
+        <h2>Submit Your Review</h2>
+        <div id="submit-div">
+            <form action="/submit-review" method="POST">
+                <label for="movie-title">Movie Title</label>
+                <input type="text" id="movie-title" name="movie-title" aria-label="Movie title"
+                    placeholder="Enter anime movie title" required />
+
+                <label for="rating">Your Rating</label>
+                <select id="rating" name="rating" required>
+                    <option value="">Select rating</option>
+                    <option value="5">★★★★★</option>
+                    <option value="4">★★★★☆</option>
+                    <option value="3">★★★☆☆</option>
+                    <option value="2">★★☆☆☆</option>
+                    <option value="1">★☆☆☆☆</option>
+                </select>
+
+                <label for="review-text">Your Review</label>
+                <textarea id="review-text" name="review-text" rows="20" aria-describedby="review-description"
+                    placeholder="Write your anime review here..." required></textarea>
+
+                <button type="submit" aria-label="Submit your anime movie review">
+                    Submit Review
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- news -->
+    <section id="anime-news">
+        <h2>Anime News</h2>
+        <div id="news-grid">
+            <% news.forEach(item=> { %>
+                <article>
+                    <img src="<%= item.image %>" alt="<%= item.title %>" />
+                    <h3>
+                        <%= item.title %>
+                    </h3>
+                    <p>
+                        <%= item.excerpt %>
+                    </p>
+                    <p class="post-meta">
+                        <time datetime="<%= item.date %>">
+                            <%= item.displayDate %>
+                        </time> |
+                        <%= item.source %>
+                    </p>
+                    <a href="<%= item.link %>" rel="noopener noreferrer" target="_blank">Read More</a>
+                </article>
+                <% }); %>
+        </div>
+    </section>
 
     <!-- footer -->
     <footer>
@@ -75,7 +159,7 @@
                         class="fas fa-dragon"></i></a></li>
         </ul>
     </footer>
-    <script src="/public/js/script.js"></script>
+    <link rel="stylesheet" href="/public/css/styles.css" />
 </body>
 
 </html>
