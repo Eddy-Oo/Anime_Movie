@@ -1,99 +1,144 @@
-.movie {
-  padding: 2vh;
-  animation: bordershadow 5s infinite;
-  display: flex;
-  max-width: 80%;
-  min-width: 40%;
-  justify-self: center;
-  text-align: center;
-  justify-content: center;
-  margin: 6vh;
+:root {
+  --background-color: #ff69b4;
+  --background-transparent-color: rgba(255, 182, 193, 0.2);
 }
 
-.movie img {
-  max-width: 20%;
-  min-width: 10%;
-  height: auto;
-  border-radius: 5px;
-  transition: ease-in-out 0.3s;
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff0f5;
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
-.movie img:hover {
-  transform: scale(1.2);
-}
-.infoDiv {
-  width: 50%;
-  background-color: var(--background-transparent-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centers text horizontally */
-  align-items: center;
+
+header {
+  background-color: rgba(255, 192, 203, 0.8);
   padding: 2vh;
-}
-.movie a {
-  display: inline-block;
-  margin-top: 10px;
-  text-decoration: none;
-  color: #ffffff;
-}
-button:hover {
-background-color: hotpink;
-transform: scale(1.05);
-transition: all 0.3s ease-in-out;
+  text-align: center;
 }
 
 .site-title {
-color: pink;
-}
-header {
-background-color: rgba(255, 192, 203, 0.8); /* light pink */
+  color: pink;
+  font-size: 3em;
 }
 
+.movie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-transparent-color);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(255, 105, 180, 0.2);
+  padding: 2vh;
+  margin: 4vh auto;
+  max-width: 80%;
+  transition: transform 0.3s ease;
+}
+
+.movie:hover {
+  transform: scale(1.02);
+}
+
+.movie img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie img:hover {
+  transform: scale(1.1);
+}
+
+.infoDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2vh;
+  width: 100%;
+}
 
 .title {
-  font-size: 5vh;
-}
-.description {
-  display: flex;
-  justify-content: center; /* Centers text horizontally */
-  align-items: center;
-  font-size: 3vh;
-}
-.year {
-  padding-left: 90%;
-}
-.movie a {
-  background-color: var(--background-color);
-  padding: 3%;
+  font-size: 2em;
+  color: hotpink;
+  margin: 0;
 }
 
-#moviesNav {
-  border: black solid 1px;
-  background-color: pink;
-  color: white;
+.description {
+  font-size: 1.2em;
+  margin-top: 1vh;
 }
+
+.year {
+  margin-top: 1vh;
+  font-weight: bold;
+  align-self: flex-end;
+}
+
+.movie a {
+  margin-top: 1rem;
+  background-color: var(--background-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.movie a:hover {
+  background-color: hotpink;
+  transform: scale(1.05);
+}
+
+button {
+  background-color: var(--background-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: hotpink;
+  transform: scale(1.05);
+}
+
+#moviesNav,
 #reviewsNav {
-  transition: 0.3s ease-in-out;
+  border: none;
+  padding: 10px 15px;
   color: white;
+  background-color: pink;
+  margin: 0 5px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
 }
-#reviewsNav:hover {
-  background-color: rgba(0, 0, 0, 0.466);
-  transition: ease-in-out 0.3s;
+
+#reviewsNav:hover,
+#moviesNav:hover {
+  background-color: rgba(0, 0, 0, 0.4);
 }
+
 @media (max-width: 1000px) {
   .movie {
     flex-direction: column;
-    align-items: center;
     padding: 10px;
+    text-align: center;
   }
+
   .movie img {
-    width: 40vh;
+    margin: 0 0 20px 0;
+    width: 60%;
   }
+
   .title {
-    font-size: 4vh;
-    padding: 0px;
-    margin: 0px;
+    font-size: 1.8em;
   }
+
   .description {
-    font-size: 2vh;
+    font-size: 1em;
   }
 }
