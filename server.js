@@ -30,7 +30,7 @@ const movies = [
     id: 3, 
     title: "Akira", 
     year: 1988,
-    photo: "https://th.bing.com/th/id/R.1689bca01bd322ef8085800c4a426273?rik=3KwqZhM8aqq5WQ&riu=http%3a%2f%2fwww.thealmightyguru.com%2fWiki%2fimages%2fthumb%2f2%2f24%2fAkira_-_Poster_-_Remake.jpg%2f900px-Akira_-_Poster_-_Remake.jpg&ehk=vsX5oOZigQBPDsA0DuWsTJP2tdVx6%2f%2fiOZkT23MHbww%3d&risl=&pid=ImgRaw&r=0",
+    photo: "https://image.tmdb.org/t/p/original/3WhkpPvTIE8Hqp50bcKbdhDEKrm.jpg",
     rating: 4,
     description: "A biker gang leader navigates a cyberpunk Neo-Tokyo to save his friend from government experiments."
   }
