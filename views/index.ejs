@@ -20,6 +20,14 @@
             <a id="reviewsNav" href="/reviews">All Reviews</a>
         </div>
     </header>
+    <div class="movie">
+  <img src="<%= movie.photo %>" alt="<%= movie.title %> poster">
+  <div class="infoDiv">
+    <h2 class="title"><%= movie.title %> (<%= movie.year %>)</h2>
+    <p class="description"><%= movie.description %></p>
+    <a href="/review/<%= movie.id %>">View Reviews</a>
+  </div>
+</div>
 
     <section id="movies">
         <% movies.forEach(movie=> { %>
