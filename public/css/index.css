@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   color: #333;
-  text-align: center; /* Center all text globally */
+  text-align: center;
 }
 
 header {
@@ -44,7 +44,7 @@ header {
   margin: 4vh;
   max-width: 300px;
   transition: transform 0.3s ease;
-  text-align: center; /* Center the movie section */
+  text-align: center;
 }
 
 .movie:hover {
@@ -73,7 +73,7 @@ header {
 
 .title {
   font-size: 2em;
-  color: black; /* Change movie title color to black */
+  color: black;
   margin: 0;
 }
 
