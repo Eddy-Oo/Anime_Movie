@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review <%= movie.title %> | Movie Otaku</title>
+    <link rel="stylesheet" href="/public/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>Movie <span>Otaku</span></h1>
+        <p>Review: <%= movie.title %>
+        </p>
+    </header>
+
+    <nav id="main-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/reviews">All Reviews</a></li>
+        </ul>
+    </nav>
+
+    <section id="submit-review">
+        <h2>Review <%= movie.title %>
+        </h2>
+        <div id="submit-div">
+            <form action="/submit-review" method="POST">
+                <input type="hidden" name="movieId" value="<%= movie.id %>">
+
+                <label for="rating">Your Rating</label>
+                <select id="rating" name="rating" required>
+                    <option value="">Select rating</option>
+                    <option value="5">★★★★★</option>
+                    <option value="4">★★★★☆</option>
+                    <option value="3">★★★☆☆</option>
+                    <option value="2">★★☆☆☆</option>
+                    <option value="1">★☆☆☆☆</option>
+                </select>
+
+                <label for="review-text">Your Review</label>
+                <textarea id="review-text" name="reviewText" rows="10" placeholder="Write your review here..."
+                    required></textarea>
+
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; TinAungOo</p>
+        <ul>
+            <!-- Footer links same as index -->
+        </ul>
+    </footer>
+    <script src="/public/js/script.js"></script>
+</body>
+
+</html>

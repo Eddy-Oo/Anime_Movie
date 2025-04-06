@@ -1,0 +1,99 @@
+/* Reviews Page Styles */
+#all-reviews {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  .review-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .review-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 10px;
+  }
+  
+  .review-date {
+    color: var(--background-gray);
+    font-size: 0.9rem;
+  }
+  
+  .review-content {
+    line-height: 1.6;
+  }
+  
+  /* Review form specific styles */
+  #submit-review h2 {
+    text-align: center;
+  }
+  
+  #submit-review form {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  /* Mobile menu styles */
+.mobile-menu-toggle {
+    display: none;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px auto;
+    z-index: 1000;
+  }
+  
+  /* Animation styles */
+  .featured-article, 
+  .movie-card, 
+  #anime-news article {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .featured-article.show, 
+  .movie-card.show, 
+  #anime-news article.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Rating interaction */
+  .rating i {
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .rating i:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 768px) {
+    .mobile-menu-toggle {
+      display: block;
+    }
+    
+    #main-nav ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    #main-nav.active ul {
+      display: flex;
+    }
+  }

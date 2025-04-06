@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Reviews | Movie Otaku</title>
+    <link rel="stylesheet" href="/public/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>Movie <span>Otaku</span></h1>
+        <p>All User Reviews</p>
+    </header>
+
+    <nav id="main-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/reviews">All Reviews</a></li>
+        </ul>
+    </nav>
+
+    <section id="all-reviews">
+        <h2>User Reviews</h2>
+
+        <% if (reviews.length===0) { %>
+            <p>No reviews yet. Be the first to review!</p>
+            <% } else { %>
+                <% reviews.forEach(review=> { %>
+                    <article class="review-card">
+                        <div class="review-header">
+                            <h3>
+                                <%= review.movieTitle %>
+                            </h3>
+                            <div class="rating">
+                                <% for(let i=0; i < review.rating; i++) { %>
+                                    <i class="fas fa-star"></i>
+                                    <% } %>
+                                        <% for(let i=0; i < 5 - review.rating; i++) { %>
+                                            <i class="far fa-star"></i>
+                                            <% } %>
+                            </div>
+                            <p class="review-date">
+                                <%= new Date(review.date).toLocaleDateString() %>
+                            </p>
+                        </div>
+                        <div class="review-content">
+                            <p>
+                                <%= review.reviewText %>
+                            </p>
+                        </div>
+                    </article>
+                    <% }); %>
+                        <% } %>
+    </section>
+
+    <footer>
+        <p>&copy; TinAungOo</p>
+        <ul>
+            <!-- Footer links same as index -->
+        </ul>
+    </footer>
+    <script src="/public/js/script.js"></script>
+</body>
+
+</html>
