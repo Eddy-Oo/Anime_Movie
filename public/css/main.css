@@ -1,8 +1,8 @@
 :root {
-  --background-color: rgb(138, 43, 226);
+  --background-color: rgb(226, 43, 186);
   --pure-white: rgb(255, 255, 255);
   --pure-black: rgb(0, 0, 0);
-  --background-transparent-color: rgba(153, 0, 255, 0.253);
+  --background-transparent-color: rgb(226, 43, 186);
   --background-gray: rgba(105, 105, 105, 0.753);
   --triggered-btn: rgb(255, 0, 0);
 }
