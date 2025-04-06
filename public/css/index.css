@@ -35,6 +35,20 @@
     text-decoration: none;
     color: #ffffff;
   }
+button:hover {
+  background-color: hotpink;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.site-title {
+  color: pink;
+}
+header {
+  background-color: rgba(255, 192, 203, 0.8); /* light pink */
+}
+
+
   .title {
     font-size: 5vh;
   }
