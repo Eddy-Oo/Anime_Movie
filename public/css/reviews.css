@@ -8,7 +8,7 @@
     transition: ease-in-out 0.5s;
   }
   #reviewsNav {
-    background-color: rgb(226, 43, 186);
+    background-color: rgba(255, 192, 203, 0.8);
     transition: ease-in-out 0.5s;
     color: white;
   }
