@@ -1,0 +1,64 @@
+#moviesNav,
+#reviewsNav {
+  color: white;
+}
+
+#moviesNav:hover,
+#reviewsNav:hover {
+  background-color: black;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; /* Center horizontally */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 2vh;
+}
+
+input,
+textarea {
+  width: 50%;
+  align-self: center;
+  margin: 10px;
+  background-color: var(--background-transparent-color);
+  color: white;
+}
+input {
+  height: 3vh;
+}
+textarea {
+  height: 10vh;
+}
+
+h1,
+a {
+  text-align: center;
+}
+
+button {
+  width: 20%;
+  align-self: center;
+  height: 3vh;
+  background-color: var(--background-color);
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  button {
+    height: auto;
+  }
+  input,
+  textarea {
+    width: 80%;
+  }
+}
