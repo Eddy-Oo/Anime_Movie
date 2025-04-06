@@ -2,9 +2,9 @@
   --background-color: rgba(255, 192, 203, 0.8);
   --pure-white: rgb(255, 255, 255);
   --pure-black: rgb(0, 0, 0);
-  --background-transparent-color: rgb(226, 43, 186);
+  --background-transparent-color: rgba(255, 192, 203, 0.8);
   --background-gray: rgba(105, 105, 105, 0.753);
-  --triggered-btn: rgb(255, 0, 0);
+  --triggered-btn: rgb(7, 209, 245);
 }
 
 html {
