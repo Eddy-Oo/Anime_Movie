@@ -1,99 +1,99 @@
-.movie {
-    padding: 2vh;
-    animation: bordershadow 5s infinite;
-    display: flex;
-    max-width: 80%;
-    min-width: 40%;
-    justify-self: center;
-    text-align: center;
-    justify-content: center;
-    margin: 6vh;
-  }
-  
-  .movie img {
-    max-width: 20%;
-    min-width: 10%;
-    height: auto;
-    border-radius: 5px;
-    transition: ease-in-out 0.3s;
-  }
-  .movie img:hover {
-    transform: scale(1.2);
-  }
-  .infoDiv {
-    width: 50%;
-    background-color: var(--background-transparent-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centers text horizontally */
-    align-items: center;
-    padding: 2vh;
-  }
-  .movie a {
-    display: inline-block;
-    margin-top: 10px;
-    text-decoration: none;
-    color: #ffffff;
-  }
-  button:hover {
-  background-color: pink;
-  transform: scale(1.05);
+/* main.css */
+
+:root {
+  --background-color: #ff69b4;
+  --background-transparent-color: rgba(255, 182, 193, 0.2);
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff0f5;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 2vh;
+}
+
+input,
+textarea {
+  width: 50%;
+  align-self: center;
+  margin: 10px;
+  background-color: var(--background-transparent-color);
+  color: #333;
+  padding: 10px;
+  border: 1px solid hotpink;
+  border-radius: 8px;
+}
+
+input {
+  height: 3vh;
+}
+
+textarea {
+  height: 10vh;
+}
+
+h1,
+a {
+  text-align: center;
+}
+
+button {
+  background-color: var(--background-color);
+  color: white;
+  width: 20%;
+  align-self: center;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
   transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: hotpink;
+  transform: scale(1.05);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+#moviesNav,
+#reviewsNav {
+  background-color: pink;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+#moviesNav:hover,
+#reviewsNav:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  input,
+  textarea {
+    width: 80%;
   }
-  
-  .site-title {
-  color: pink;
+
+  button {
+    width: 60%;
   }
-  header {
-  background-color: rgba(255, 192, 203, 0.8); /* light pink */
-  }
-  
-  
-  .title {
-    font-size: 5vh;
-  }
-  .description {
-    display: flex;
-    justify-content: center; /* Centers text horizontally */
-    align-items: center;
-    font-size: 3vh;
-  }
-  .year {
-    padding-left: 90%;
-  }
-  .movie a {
-    background-color: var(--background-color);
-    padding: 3%;
-  }
-  
-  #moviesNav {
-    border: black solid 1px;
-    background-color: pink;
-    color: white;
-  }
-  #reviewsNav {
-    transition: 0.3s ease-in-out;
-    color: white;
-  }
-  #reviewsNav:hover {
-    background-color: rgba(0, 0, 0, 0.466);
-    transition: ease-in-out 0.3s;
-  }
-  @media (max-width: 1000px) {
-    .movie {
-      flex-direction: column;
-      align-items: center;
-      padding: 10px;
-    }
-    .movie img {
-      width: 40vh;
-    }
-    .title {
-      font-size: 4vh;
-      padding: 0px;
-      margin: 0px;
-    }
-    .description {
-      font-size: 2vh;
-    }
-  }
+}
