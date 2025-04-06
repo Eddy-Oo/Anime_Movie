@@ -1,19 +1,23 @@
+/* review.css */
+
 :root {
   --background-color: #ff69b4;
   --background-transparent-color: rgba(255, 182, 193, 0.2);
 }
 
 section {
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
 }
 
 form {
   display: flex;
   flex-direction: column;
   padding: 2vh;
+  align-items: center;
 }
 
 input,
