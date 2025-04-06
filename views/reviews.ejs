@@ -1,53 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Reviews - Movie Otaku</title>
     <link rel="stylesheet" href="/public/css/styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-
-<body>
+    <link rel="stylesheet" href="/css/reviews.css" />
+  </head>
+  <body>
     <header>
+      <div id="headerdiv">
         <h1>Movie <span>Otaku</span></h1>
         <p>All Anime Movie Reviews</p>
+      </div>
+      <div id="headerNav">
+        <a id="moviesNav" href="/">List Movies</a>
+        <a id="reviewsNav" href="/reviews">All reviews</a>
+      </div>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/reviews">All Reviews</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section class="reviews-container">
-            <h2>All Reviews</h2>
-            <% reviews.forEach(review=> { %>
-                <div class="review-card">
-                    <h3>
-                        <%= review.movieTitle %>
-                    </h3>
-                    <div class="rating">
-                        <% for(let i=0; i < 5; i++) { %>
-                            <% if(i < review.rating) { %>
-                                <i class="fas fa-star"></i>
-                                <% } else { %>
-                                    <i class="far fa-star"></i>
-                                    <% } %>
-                                        <% } %>
-                    </div>
-                    <p>
-                        <%= review.reviewText %>
-                    </p>
-                    <small>Reviewed on <%= review.date %></small>
-                </div>
-                <% }); %>
-        </section>
-    </main>
-
+    <h1>All Reviews</h1>
+    <% movies.forEach(movie => { %>
+    <div class="reviewDiv">
+      <h2>Reviews for <%= movie.title %> (<%= movie.year %>)</h2>
+      <% reviews.forEach(review => { %> <% if (Number(review.id) === movie.id) {
+      %>
+      <div class="review">
+        <p class="name"><%= review.name %></p>
+        <p class="text"><%= review.text %></p>
+      </div>
+      <% } %> <% }) %>
+    </div>
+    <% }) %>
+    <div class="container">
+      <a href="/">Back to Home</a>
+    </div>
     <footer>
         <p>&copy; 2023 Movie Otaku</p>
         <div class="social-links">
@@ -56,7 +42,5 @@
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
-    <script src="/public/js/script.js"></script>
-</body>
-
+  </body>
 </html>
