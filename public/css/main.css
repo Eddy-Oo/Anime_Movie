@@ -1,0 +1,90 @@
+:root {
+  --background-color: rgb(138, 43, 226);
+  --pure-white: rgb(255, 255, 255);
+  --pure-black: rgb(0, 0, 0);
+  --background-transparent-color: rgba(153, 0, 255, 0.253);
+  --background-gray: rgba(105, 105, 105, 0.753);
+  --triggered-btn: rgb(255, 0, 0);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  color: white;
+}
+
+body {
+  background-color: var(--pure-black);
+  padding: 0px;
+  margin: 0px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  background-color: var(--background-transparent-color);
+  animation: headershadow 5s infinite;
+  margin: 0px;
+  padding-bottom: 5px;
+  z-index: 4;
+}
+
+#headerdiv {
+  display: flex;
+  flex-direction: row;
+  gap: 5vh;
+}
+h1 {
+  padding: 0px;
+  margin-bottom: 0px;
+  margin-top: 5px;
+}
+
+#headerNav {
+  display: flex;
+  align-self: center;
+}
+
+#moviesNav,
+#reviewsNav {
+  text-decoration: none;
+  color: #000000;
+  padding: 10px;
+}
+
+@keyframes headershadow {
+  0% {
+    border-bottom: solid 2px var(--background-color);
+  }
+  50% {
+    border-bottom: solid 2px var(--pure-white);
+  }
+  100% {
+    border-bottom: solid 2px var(--background-color);
+  }
+}
+
+@keyframes bordershadow {
+  0% {
+    border: solid 2px var(--background-color);
+  }
+  50% {
+    border: solid 2px var(--pure-white);
+  }
+  100% {
+    border: solid 2px var(--background-color);
+  }
+}
+
+@media (max-width: 768px) {
+  #headerdiv {
+    flex-direction: column;
+    gap: 0px;
+    font-size: 2vh;
+  }
+}
