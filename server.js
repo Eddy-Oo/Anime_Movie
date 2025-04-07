@@ -2,13 +2,11 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-// Middleware
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 
-// Anime movie data - Only 3 films
 const movies = [
   { 
     id: 1, 
@@ -63,7 +61,6 @@ let reviews = [
   }
 ];
 
-// Routes
 app.get('/', (req, res) => {
   res.render('index', { 
     movies,
@@ -116,7 +113,6 @@ app.get('/reviews', (req, res) => {
   });
 });
 
-// Error handling
 app.use((req, res) => {
   res.status(404).render('404', { 
     message: 'Studio Ghibli couldn\'t find this page',
@@ -132,7 +128,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✨ Anime Review Server running at http://localhost:${PORT}`);
